@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/change_use"
+        android:icon="@drawable/vector_share"
+        android:checkable="true"
+        android:title="修改个人信息"/>
+    <item
+        android:id="@+id/nav_share"
+        android:icon="@drawable/vector_share"
+        android:checkable="true"
+        android:title="设置状态"/>
+    <item
+        android:id="@+id/login_out"
+        android:icon="@drawable/vector_about"
+        android:checkable="true"
+        android:title="@string/login_out"/>
+</menu>

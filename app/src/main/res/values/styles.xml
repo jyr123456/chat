@@ -1,0 +1,103 @@
+<resources>
+
+    <style name="AppTheme" parent="Theme.Design.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/main_color</item>
+        <item name="colorPrimaryDark">@color/main_color</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="FullScreenTheme" parent="Theme.Design.Light.NoActionBar">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowFullscreen">true</item>
+    </style>
+    
+    <style name="Theme.Start" parent="android:Theme">
+        <item name="android:windowBackground">@drawable/bg_launcher</item>
+        <item name="android:windowNoTitle">true</item>
+    </style>
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar"/>
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light"/>
+
+    <style name="TextInputLayout_Style" parent="TextAppearance.AppCompat">
+        <item name="android:textColorHint">#8c8c8c</item>
+        <item name="android:textSize">@dimen/edittext_textsize</item>
+        <!-- 下面可以根据需要设置，如果没有将默认使用默认theme的颜色 -->
+        <!-- Label标签的颜色 -->
+        <item name="colorAccent">@color/colorAccent</item>
+        <!-- 默认状态状态设置底线颜色 -->
+        <item name="colorControlNormal">@color/colorPrimaryDark</item>
+        <!-- 选择的底线颜色 -->
+        <item name="colorControlActivated">@color/colorAccent</item>
+    </style>
+
+    <style name="TextInputLayout_Error_Msg_Style" parent="@android:style/TextAppearance">
+        <item name="android:textColor">@color/colorAccent</item>
+        <item name="android:textSize">@dimen/sp_12</item>
+    </style>
+
+    <style name="AboutCardViewStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_marginBottom">@dimen/dimen_10</item>
+        <item name="android:layout_marginLeft">@dimen/dimen_10</item>
+        <item name="android:layout_marginRight">@dimen/dimen_10</item>
+        <item name="android:background">@color/white</item>
+        <item name="android:gravity">center_horizontal</item>
+        <item name="android:orientation">vertical</item>
+    </style>
+
+    <style name="AboutTextViewStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:gravity">start</item>
+        <item name="android:padding">@dimen/dimen_10</item>
+        <item name="android:textColor">@color/about_text_color</item>
+    </style>
+
+    <style name="Divider">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">1dp</item>
+        <item name="android:background">?android:attr/listDivider</item>
+    </style>
+
+    <!-- Application theme. -->
+    <style name="AppTheme_1" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+
+    <style name="AppThemeLightBackground" parent="AppTheme_1">
+        <item name="android:windowBackground">@android:color/background_light</item>
+    </style>
+
+
+    <style name="FilePicker.Elec" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/elec_primary</item>
+        <item name="colorPrimaryDark">@color/elec_primary_dark</item>
+        <item name="toolbar">@style/Toolbar.elec</item>
+        <item name="album.dropdown.title.color">@color/elec_album_dropdown_title_text</item>
+        <item name="album.dropdown.count.color">@color/elec_album_dropdown_count_text</item>
+        <item name="album.element.color">@android:color/white</item>
+        <item name="album.thumbnail.placeholder">@color/elec_album_dropdown_thumbnail_placeholder</item>
+        <item name="album.emptyView">@drawable/ic_empty_elec</item>
+        <item name="album.emptyView.textColor">@color/elec_album_empty_view</item>
+        <item name="item.placeholder">@color/elec_item_placeholder</item>
+        <item name="item.checkCircle.backgroundColor">@color/elec_item_checkCircle_backgroundColor</item>
+        <item name="item.checkCircle.borderColor">@color/elec_item_checkCircle_borderColor</item>
+        <item name="page.bg">@color/elec_page_bg</item>
+        <item name="bottomToolbar.bg">@color/elec_bottom_toolbar_bg</item>
+        <item name="bottomToolbar.preview.textColor">@color/elec_bottom_toolbar_preview</item>
+        <item name="bottomToolbar.apply.textColor">@color/elec_bottom_toolbar_apply</item>
+        <item name="preview.bottomToolbar.back.textColor">@color/elec_preview_bottom_toolbar_back_text</item>
+        <item name="preview.bottomToolbar.apply.textColor">@color/elec_preview_bottom_toolbar_apply</item>
+        <item name="listPopupWindowStyle">@style/Popup.elec</item>
+        <item name="capture.textColor">@color/elec_capture</item>
+    </style>
+
+</resources>
