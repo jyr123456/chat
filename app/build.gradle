@@ -42,7 +42,8 @@ dependencies {
     implementation 'org.igniterealtime.smack:smack-core:4.1.9'
     //Smack IM.Classes and methods for XMPP-IM (RFC 6121): Roster, Chat and other functionality
     implementation 'org.igniterealtime.smack:smack-im:4.1.9'
-    //Smack for Android. All the required dependencies to run Smack on Android.
+    //implementation 'org.igniterealtime.smack:smack-sasl-provided:4.1.8'
+    //Smack for Android. All the required dependencies to run Smack on Android. smack-sasl-provided-4.1.8
     //smack-android依赖smack-extensions和smack-experimental和smack-tcp
     implementation 'org.igniterealtime.smack:smack-android:4.1.9'
     implementation 'org.igniterealtime.smack:smack-android-extensions:4.1.9'

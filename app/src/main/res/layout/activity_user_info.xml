@@ -29,7 +29,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/dimen_10"
-        android:text="昵称"/>
+        android:text="用户名"/>
     </LinearLayout>
     <TextView
         android:id="@+id/tv_add"
@@ -42,7 +42,7 @@
         android:gravity="center"
         android:background="@drawable/shape_btn_frame"
         android:textColor="@color/white"
-        android:text="加好友"/>
+        android:text="删除好友"/>
 
     </FrameLayout>
 </LinearLayout>

@@ -51,6 +51,10 @@
         android:layout_marginTop="@dimen/dimen_10"
         android:text="记住密码"/>
 
+
+
+
+
     <Button
         android:id="@+id/btn_login"
         android:layout_width="fill_parent"

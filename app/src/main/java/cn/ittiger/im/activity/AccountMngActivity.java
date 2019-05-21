@@ -1,9 +1,11 @@
 package cn.ittiger.im.activity;
 
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
 import android.widget.RadioGroup;
+import android.widget.TextView;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -21,6 +23,13 @@ import cn.ittiger.util.UIUtil;
  * @time: 2015-10-23下午3:11:11
  */
 public class AccountMngActivity extends BaseActivity {
+
+    @BindView(R.id.toolbar)
+    Toolbar mToolbar;
+    @BindView(R.id.toolbarTitle)
+    TextView mToolbarTitle;
+
+
     /**
      * 注销登陆
      */
@@ -32,11 +41,16 @@ public class AccountMngActivity extends BaseActivity {
     @BindView(R.id.rg_user_state)
     RadioGroup mUserState;
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_account_mng_layout);
+        //
         ButterKnife.bind(this);
+
+        //initViews();
         mUserState.setOnCheckedChangeListener((group, checkedId) -> {
             switch (checkedId) {
                 case R.id.rb_user_online://在线
@@ -52,7 +66,19 @@ public class AccountMngActivity extends BaseActivity {
             }
         });
     }
+    private void initViews() {
+        setSupportActionBar(mToolbar);
+        getSupportActionBar().setDisplayShowTitleEnabled(false);//不显示ToolBar的标题
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        mToolbarTitle.setText("修改状态信息");
+        mToolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
 
+                onBackPressed();
+            }
+        });
+    }
     public void changeState(int code) {
         if (SmackManager.getInstance().updateUserState(code)) {
             UIUtil.showToast(this, "修改状态成功");

@@ -60,7 +60,7 @@
     <string name="recording_voice_text">手指上滑，取消发送</string>
     <string name="cancel_recording_voice_text">松开手指，取消发送</string>
 
-    <string name="nav_header_title">基于Smack实现的简单即时通讯App</string>
+    <string name="nav_header_title">iBistu</string>
     <string name="nav_share">分享应用</string>
     <string name="nav_about">关于</string>
     <string name="login_out">退出登录</string>

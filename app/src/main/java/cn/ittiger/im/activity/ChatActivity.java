@@ -1,10 +1,13 @@
 package cn.ittiger.im.activity;
 
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.media.MediaScannerConnection;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.Environment;
 import android.provider.MediaStore;
 import android.support.v4.content.FileProvider;
 import android.util.Log;
@@ -20,6 +23,7 @@ import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
 import org.greenrobot.eventbus.ThreadMode;
 import org.jivesoftware.smack.SmackException;
+import org.jivesoftware.smack.XMPPException;
 import org.jivesoftware.smack.chat.Chat;
 import org.jivesoftware.smackx.filetransfer.FileTransfer;
 import org.jivesoftware.smackx.filetransfer.IncomingFileTransfer;
@@ -27,7 +31,11 @@ import org.jivesoftware.smackx.filetransfer.OutgoingFileTransfer;
 import org.json.JSONObject;
 
 import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.ObjectOutputStream;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 
@@ -54,6 +62,8 @@ import rx.android.schedulers.AndroidSchedulers;
 import rx.functions.Action1;
 import rx.schedulers.Schedulers;
 
+import static android.os.Build.ID;
+
 /**
  * 单聊窗口
  *
@@ -63,6 +73,13 @@ import rx.schedulers.Schedulers;
 public class ChatActivity extends BaseChatActivity {
     @BindView(R.id.image_info)
     ImageView imageInfo;
+
+
+
+    //长按后显示的 Item
+    final String[] items = new String[] { "保存图片"};
+    //图片转成Bitmap数组
+    final Bitmap[] bitmap = new Bitmap[1];
 
     /**
      * 聊天窗口对象
@@ -161,6 +178,8 @@ public class ChatActivity extends BaseChatActivity {
         }
     }
 
+
+
     /**
      * 接收文件
      */
@@ -182,8 +201,79 @@ public class ChatActivity extends BaseChatActivity {
                 }
                 String fileName = String.valueOf(System.currentTimeMillis());
                 File file = new File(FileUtils.getReceivedImagesDir(ChatActivity.this), request.getFileName());
+
+                System.out.println("----------------------------------");
+
+                System.out.println("request.getFileName()="+request.getFileName());
+                System.out.println("----------------------------------")        ;
                 transfer.recieveFile(file);
+
+
+
+                try {
+                      File filePath = new File("storage/emulated/0/", "fcyt");
+                      if (!filePath.exists()) {
+                           filePath.mkdirs();
+                       }
+                    //                    File file = new File( Environment
+                    //                            .getExternalStorageDirectory()+"/fcyt/"
+                    //                            +"/"+ request.getFileName());
+                      String streamID = request.getStreamID();
+                      File file2 = new File(filePath, request.getFileName());
+                      System.out.println(request.getFileName() + "接收路径" + file.getPath() + "接收语音文件名称" + file.exists());
+                      transfer.recieveFile(file2);
+                 } catch (Exception e) {
+                       e.printStackTrace();
+                 }
+
+
+
                 checkTransferStatus(transfer, file, messageType, false);
+
+
+                /*// 首先保存图片
+                File file2 = null;
+                String fileName2 = System.currentTimeMillis() + ".jpg";
+                File root = new File(Environment.getExternalStorageDirectory(), getPackageName());
+                File dir = new File(root, "images");
+                if (dir.mkdirs() || dir.isDirectory()) {
+                    file2 = new File(dir, fileName2);
+                }
+                try {
+                    FileOutputStream fos = new FileOutputStream(file2);
+
+                    //bitmap.compress(Bitmap.CompressFormat.JPEG, 100, fos);
+                    fos.flush();
+                    fos.close();
+                } catch (FileNotFoundException e) {
+                    e.printStackTrace();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+                //其次把文件插入到系统图库
+                try {
+                    MediaStore.Images.Media.insertImage(this.getContentResolver(),
+                            file2.getAbsolutePath(), fileName2, null);
+                } catch (FileNotFoundException e) {
+                    e.printStackTrace();
+                }
+                // 通知图库更新
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
+                    MediaScannerConnection.scanFile(this, new String[]{file2.getAbsolutePath()}, null,
+                            new MediaScannerConnection.OnScanCompletedListener() {
+                                public void onScanCompleted(String path, Uri uri) {
+                                    Intent mediaScanIntent = new Intent(Intent.ACTION_MEDIA_SCANNER_SCAN_FILE);
+                                    mediaScanIntent.setData(uri);
+                                    sendBroadcast(mediaScanIntent);
+                                }
+                            });
+                } else {
+                    String relationDir = file.getParent();
+                    File file1 = new File(relationDir);
+                    sendBroadcast(new Intent(Intent.ACTION_MEDIA_MOUNTED, Uri.fromFile(file1.getAbsoluteFile())));
+                }*/
+
+
             } catch (SmackException | IOException e) {
                 Logger.e(e, "receive file failure");
             }

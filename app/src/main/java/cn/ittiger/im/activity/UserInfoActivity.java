@@ -65,20 +65,22 @@ public class UserInfoActivity extends IMBaseActivity implements Response.Listene
         setSupportActionBar(mToolbar);
         getSupportActionBar().setDisplayShowTitleEnabled(false);//不显示ToolBar的标题
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        mToolbarTitle.setText("修改信息");
+        mToolbarTitle.setText("好友信息");
         mToolbar.setNavigationOnClickListener(v -> onBackPressed());
         user = getIntent().getStringExtra("user");
         nickname = getIntent().getStringExtra("nickname");
+        tvNickname.setText(nickname+"");
         register(user);
     }
 
 
     @OnClick(R.id.tv_add)
     public void onViewClicked() {
+        detelFriend(user);
         if ((int) tvAdd.getTag() == 1) {
-            detelFriend(user);
+            //detelFriend(user);
         } else {
-            addFriend(user);
+            //addFriend(user);
         }
     }
 

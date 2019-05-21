@@ -68,7 +68,8 @@ public class SmackManager {
     /**
      * Xmpp服务器地址
      */
-    public static final String SERVER_IP = "172.20.10.2" ;
+    //public static final String SERVER_IP = "172.20.10.2" ;
+    public static final String SERVER_IP = "192.168.43.27" ;
     /*
      * Xmpp 服务器端口"
      */
@@ -76,7 +77,8 @@ public class SmackManager {
     /**
      * 服务器名称
      */
-    public static final String SERVER_NAME = "www.jyr.com";
+    //public static final String SERVER_NAME = "www.jyr.com";
+    public static final String SERVER_NAME = "sky-20180609xfh.mshome.net";
     /**
      *
      */

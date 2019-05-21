@@ -20,12 +20,17 @@ import rx.functions.Func1;
 import rx.schedulers.Schedulers;
 
 import android.annotation.SuppressLint;
+import android.app.Notification;
+import android.app.NotificationManager;
+import android.app.PendingIntent;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.widget.AppCompatCheckBox;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.View;
 import android.widget.Button;
+import android.widget.RemoteViews;
 
 /**
  * 登陆openfire服务器
@@ -54,6 +59,11 @@ public class LoginActivity extends IMBaseActivity {
      */
     @BindView(R.id.cb_remember_password)
     AppCompatCheckBox mCbRememberPassword;
+
+
+
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -132,6 +142,39 @@ public class LoginActivity extends IMBaseActivity {
                     if (mCbRememberPassword.isChecked()) {
                         LoginHelper.saveUser(loginResult.getUser());
                     }
+
+
+                   // NotificationManager  mManager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
+
+                   //意图数组
+                  //  Intent[] intents = {new Intent(this, MainActivity.class)};
+                    //待处理意图对象
+  //                 PendingIntent  mIntent = PendingIntent.getActivities(this, 0, intents, 0);
+                  //消息栏通知对象
+                  //    Notification mNotification = new Notification();
+//
+//                    //设置在通知栏的消息图标
+//                    //mNotification.icon = R.mipmap.ic_launcher;
+//                    //设置在通知栏的信息内容
+                //   mNotification.tickerText = "重大消息";
+//                    //设置默认的声音,此外还可以设置震动（需加入权限）
+//                    mNotification.defaults = Notification.DEFAULT_SOUND;
+//                    //添加灯光
+//                    // mNotification.defaults=Notification.DEFAULT_LIGHTS;
+//                    //不能删除
+//                    mNotification.flags = Notification.FLAG_NO_CLEAR;
+//                    //设置下拉时的显示布局
+//                    RemoteViews convertView = new RemoteViews(getPackageName(), R.layout.activity_about);
+//                    //convertView.setImageViewResource(R.id.avatar, R.mipmap.ic_launcher);
+//                    //convertView.setTextViewText(R.id.et_login_username, cll);
+//                    mNotification.contentView = convertView;
+//                    mNotification.contentIntent = mIntent;
+//                    //发送通知
+//                    // 第一个参数唯一的标识该Notification，第二个参数就是Notification对象
+                    //mManager.notify(1, mNotification);
+
+
+
                     ActivityUtil.skipActivity(LoginActivity.this, MainActivity.class);
 
                 } else {

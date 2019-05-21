@@ -46,11 +46,11 @@ public class ChangeInfoActivity extends IMBaseActivity {
     @BindView(R.id.acet_username)
     AppCompatEditText mUserEditText;
 
-    //昵称
-    @BindView(R.id.til_nickname)
-    TextInputLayout mNicknameTextInput;
-    @BindView(R.id.acet_nickname)
-    AppCompatEditText mNicknameEditText;
+//    //昵称
+////    @BindView(R.id.til_nickname)
+////    TextInputLayout mNicknameTextInput;
+////    @BindView(R.id.acet_nickname)
+////    AppCompatEditText mNicknameEditText;
 
     //密码
     @BindView(R.id.til_password)
@@ -92,7 +92,7 @@ public class ChangeInfoActivity extends IMBaseActivity {
         setSupportActionBar(mToolbar);
         getSupportActionBar().setDisplayShowTitleEnabled(false);//不显示ToolBar的标题
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        mToolbarTitle.setText("修改信息");
+        mToolbarTitle.setText("修改个人信息");
         mToolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -109,13 +109,13 @@ public class ChangeInfoActivity extends IMBaseActivity {
 //            mUserTextInput.setError(getString(R.string.error_register_input_username_invalid));
 //            return;
 //        }
-        final String nickname = mNicknameEditText.getText().toString();
-        if (ValueUtil.isEmpty(nickname)) {
-            mNicknameTextInput.setError(getString(R.string.error_register_input_nickname));
-            return;
-        }
+//        final String nickname = mNicknameEditText.getText().toString();
+//        if (ValueUtil.isEmpty(nickname)) {
+//            mNicknameTextInput.setError(getString(R.string.error_register_input_nickname));
+//            return;
+//        }
         User user =  LoginHelper.getUser();
-        register(user.getUsername(), nickname, user.getPassword());
+        register(user.getUsername(), user.getUsername(), user.getPassword());
     }
 
     public void register(final String username, String nickname, final String password) {

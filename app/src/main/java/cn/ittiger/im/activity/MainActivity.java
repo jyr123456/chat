@@ -170,7 +170,7 @@ public class MainActivity extends IMBaseActivity
         mDrawerLayout.addDrawerListener(new NavDrawerListener());
     }
 
-    /**
+    /**MyReceiver
      * 主页底部Tab
      */
     private void initTabHost() {
