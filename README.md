@@ -11,3 +11,6 @@ Smack与openfire服务之间的通信关键代码和实现可以参考我的[博
 <img src="screenshots/1.jpg" width = "360" height = "640" alt=""/>
 <img src="screenshots/2.jpg" width = "360" height = "640" alt=""/>
 <img src="screenshots/3.jpg" width = "360" height = "640" alt=""/>
+
+
+#iBistu 基于Openfire+Smack实现的简单即时通信客户端，界面仿照QQ实现。 实现了简单的登陆、注册、单聊，群聊，发送文本、语音、图片、文件消息。
