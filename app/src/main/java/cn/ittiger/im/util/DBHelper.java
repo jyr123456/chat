@@ -9,7 +9,6 @@ import cn.ittiger.im.app.IDbApplication;
 
 /**
  * 本地数据库管理类
- * @author laohu
  */
 public class DBHelper {
     /**

@@ -1,10 +1,5 @@
 package cn.ittiger.im.smack;
 
-import cn.ittiger.im.bean.ChatMessage;
-import cn.ittiger.im.constant.MessageType;
-import cn.ittiger.im.util.DBHelper;
-import cn.ittiger.im.util.LoginHelper;
-
 import com.orhanobut.logger.Logger;
 
 import org.greenrobot.eventbus.EventBus;
@@ -15,10 +10,13 @@ import org.json.JSONObject;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import cn.ittiger.im.bean.ChatMessage;
+import cn.ittiger.im.constant.MessageType;
+import cn.ittiger.im.util.DBHelper;
+import cn.ittiger.im.util.LoginHelper;
+
 /**
  * 多人聊天消息监听
- * @author: laohu on 2017/1/24
- * @site: http://ittiger.cn
  */
 public class MultiChatMessageListener implements MessageListener {
     private static final String PATTERN = "[a-zA-Z0-9_]+@";

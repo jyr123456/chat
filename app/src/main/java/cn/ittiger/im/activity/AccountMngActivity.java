@@ -18,9 +18,6 @@ import cn.ittiger.util.UIUtil;
 
 /**
  * 账号管理
- *
- * @auther: hyl
- * @time: 2015-10-23下午3:11:11
  */
 public class AccountMngActivity extends BaseActivity {
 

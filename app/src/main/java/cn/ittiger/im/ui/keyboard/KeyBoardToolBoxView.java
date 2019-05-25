@@ -1,19 +1,10 @@
 package cn.ittiger.im.ui.keyboard;
 
-import butterknife.BindView;
-import butterknife.ButterKnife;
-import cn.ittiger.im.R;
-import cn.ittiger.im.util.RecordVoiceManager;
-import cn.ittiger.util.UIUtil;
-import cn.ittiger.util.ValueUtil;
-
 import android.Manifest;
 import android.app.Activity;
 import android.content.Context;
 import android.content.pm.PackageManager;
 import android.support.v4.app.ActivityCompat;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.helper.ItemTouchHelper;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.AttributeSet;
@@ -26,11 +17,15 @@ import android.widget.RelativeLayout;
 
 import java.io.File;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
+import cn.ittiger.im.R;
+import cn.ittiger.im.util.RecordVoiceManager;
+import cn.ittiger.util.UIUtil;
+import cn.ittiger.util.ValueUtil;
+
 /**
  * 键盘顶部的输入相关布局
- *
- * @author: laohu on 2017/2/5
- * @site: http://ittiger.cn
  */
 public class KeyBoardToolBoxView extends RelativeLayout {
     private Activity mActivity;

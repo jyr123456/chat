@@ -6,9 +6,6 @@ import cn.ittiger.im.fragment.EmotionFragment;
 
 /**
  * 表情类型
- *
- * @author: laohu on 2017/2/6
- * @site: http://ittiger.cn
  */
 public enum EmotionType {
     EMOTION_TYPE_CLASSIC(R.drawable.vector_keyboard_emotion, EmotionFragment.class),   //经典表情

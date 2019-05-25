@@ -1,20 +1,18 @@
 package cn.ittiger.im.ui;
 
+import android.content.Context;
+import android.content.DialogInterface;
+import android.support.v7.app.AlertDialog;
+
+import org.greenrobot.eventbus.EventBus;
+
 import cn.ittiger.im.R;
 import cn.ittiger.im.bean.ContactEntity;
 import cn.ittiger.im.util.IMUtil;
 import cn.ittiger.im.util.IntentHelper;
 
-import org.greenrobot.eventbus.EventBus;
-
-import android.content.Context;
-import android.content.DialogInterface;
-import android.support.v7.app.AlertDialog;
-
 /**
  * 联系人列表
- * @author: laohu on 2016/12/24
- * @site: http://ittiger.cn
  */
 public class ChatPromptDialog implements DialogInterface.OnClickListener {
 

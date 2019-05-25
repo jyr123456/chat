@@ -46,6 +46,7 @@ import cn.ittiger.im.activity.base.IMBaseActivity;
 import cn.ittiger.im.bean.ChatMessage;
 import cn.ittiger.im.bean.ChatRecord;
 import cn.ittiger.im.bean.ChatUser;
+import cn.ittiger.im.bean.ContactEntity;
 import cn.ittiger.im.constant.MessageType;
 import cn.ittiger.im.fragment.ContactFragment;
 import cn.ittiger.im.fragment.MessageFragment;
@@ -70,9 +71,6 @@ import static cn.ittiger.im.smack.SmackManager.parseName;
 
 /**
  * 主页面
- *
- * @author: laohu on 2016/12/24
- * @site: http://ittiger.cn
  */
 public class MainActivity extends IMBaseActivity
         implements NavigationView.OnNavigationItemSelectedListener,
@@ -384,7 +382,7 @@ public class MainActivity extends IMBaseActivity
                     //弹出一个对话框，包含同意和拒绝按钮
                     AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
                     builder.setTitle("添加好友请求");
-                    builder.setMessage("用户" + alertSubName + "请求添加你为好友");
+                    builder.setMessage("用户" + alertSubName + "请求添加你为好友!");
                     //同意按钮监听事件，发送同意Presence包及添加对方为好友的申请
                     builder.setPositiveButton("同意", (dialog, arg1) -> {
                         Presence presenceRes = new Presence(Presence.Type.subscribed);
@@ -403,6 +401,9 @@ public class MainActivity extends IMBaseActivity
                 }
             } else if (response.equals("恭喜，对方同意添加好友！")) {
                 String alertName = bundle.getString("fromName");
+                Presence presenceRes = new Presence(Presence.Type.subscribed);
+                presenceRes.setTo(alertName);
+                SmackManager.getInstance().sendPacket(presenceRes);
                 if (alertName != null) {
                     //裁剪JID得到对方用户名
                     alertSubName = alertName.substring(0, alertName.indexOf("@"));
@@ -476,6 +477,8 @@ public class MainActivity extends IMBaseActivity
             boolean flag = SmackManager.getInstance().addFriend(jid, alertSubName, null);
             if (flag) {
                 RosterEntry entry = SmackManager.getInstance().getFriend(jid);
+                Logger.d("AddFriendDEBUG",entry);
+                Logger.d("AddFriendDEBUG",entry.getStatus());
                 subscriber.onNext(entry);
                 subscriber.onCompleted();
             } else {
@@ -499,8 +502,10 @@ public class MainActivity extends IMBaseActivity
 
                     @Override
                     public void onNext(RosterEntry rosterEntry) {
-//                        EventBus.getDefault().post(new ContactEntity(rosterEntry));
-//                        send(rosterEntry, "你们已经成为好友");
+                        //jyr修改
+                        EventBus.getDefault().post(new ContactEntity(rosterEntry));
+                        send(rosterEntry, "你们已经成为好友");
+                        //
                     }
                 });
     }

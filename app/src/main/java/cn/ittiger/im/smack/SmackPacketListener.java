@@ -2,18 +2,14 @@ package cn.ittiger.im.smack;
 
 import android.content.Context;
 import android.content.Intent;
-import android.util.Log;
 
-import org.greenrobot.eventbus.EventBus;
 import org.jivesoftware.smack.PacketListener;
 import org.jivesoftware.smack.packet.Presence;
 import org.jivesoftware.smack.packet.Stanza;
 
-import cn.ittiger.im.fragment.ContactFragment;
-
 
 /**
- * create by Arkndiy on 2019/5/1 22:39
+ * create by jyr on 2019/5/1 22:39
  * 类说明：
  */
 public class SmackPacketListener implements PacketListener {

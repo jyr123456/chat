@@ -1,5 +1,17 @@
 package cn.ittiger.im.activity.base;
 
+import android.os.Bundle;
+import android.support.annotation.LayoutRes;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.Toolbar;
+import android.view.MotionEvent;
+import android.view.View;
+import android.widget.TextView;
+
+import org.greenrobot.eventbus.EventBus;
+
+import java.util.List;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import cn.ittiger.im.R;
@@ -16,23 +28,8 @@ import rx.android.schedulers.AndroidSchedulers;
 import rx.functions.Action1;
 import rx.schedulers.Schedulers;
 
-import org.greenrobot.eventbus.EventBus;
-
-import android.os.Bundle;
-import android.support.annotation.LayoutRes;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.Toolbar;
-import android.view.MotionEvent;
-import android.view.View;
-import android.widget.TextView;
-
-import java.util.List;
-
 /**
  * 单人和多人聊天窗口基类
- *
- * @author: laohu on 2017/2/3
- * @site: http://ittiger.cn
  */
 public abstract class BaseChatActivity extends IMBaseActivity implements ChatKeyboard.KeyboardOperateListener {
     @BindView(R.id.toolbar)

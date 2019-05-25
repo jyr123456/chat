@@ -1,23 +1,19 @@
 package cn.ittiger.im.util;
 
-import cn.ittiger.im.constant.MessageType;
-import cn.ittiger.util.DateUtil;
+import android.media.MediaRecorder;
+import android.util.Log;
 
 import com.orhanobut.logger.Logger;
-
-import android.Manifest;
-import android.media.MediaRecorder;
-import android.support.v4.app.ActivityCompat;
-import android.util.Log;
 
 import java.io.File;
 import java.io.IOException;
 import java.util.Date;
 
+import cn.ittiger.im.constant.MessageType;
+import cn.ittiger.util.DateUtil;
+
 /**
  * 录音
- * @author: laohu on 2017/2/7
- * @site: http://ittiger.cn
  */
 public class RecordVoiceManager {
     /**

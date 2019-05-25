@@ -6,8 +6,6 @@ import java.util.HashMap;
 
 /**
  * Smack全局监听器管理
- * @author: laohu on 2017/1/18
- * @site: http://ittiger.cn
  */
 public class SmackListenerManager {
     private static volatile SmackListenerManager sSmackListenerManager;

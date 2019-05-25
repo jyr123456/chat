@@ -1,5 +1,14 @@
 package cn.ittiger.im.util;
 
+import android.content.Context;
+import android.content.Intent;
+
+import org.greenrobot.eventbus.EventBus;
+import org.jivesoftware.smack.roster.RosterEntry;
+import org.jivesoftware.smackx.muc.MultiUserChat;
+
+import java.lang.reflect.Field;
+
 import cn.ittiger.app.AppContext;
 import cn.ittiger.im.activity.ChatActivity;
 import cn.ittiger.im.activity.MultiChatActivity;
@@ -8,18 +17,7 @@ import cn.ittiger.im.bean.ChatUser;
 import cn.ittiger.util.ActivityUtil;
 import cn.ittiger.util.PreferenceHelper;
 
-import org.greenrobot.eventbus.EventBus;
-import org.jivesoftware.smack.roster.RosterEntry;
-import org.jivesoftware.smackx.muc.MultiUserChat;
-
-import android.content.Context;
-import android.content.Intent;
-
-import java.lang.reflect.Field;
-
 /**
- * @author: laohu on 2017/1/22
- * @site: http://ittiger.cn
  */
 public final class IMUtil {
 

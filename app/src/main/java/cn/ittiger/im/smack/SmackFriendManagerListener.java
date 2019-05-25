@@ -19,9 +19,6 @@ import cn.ittiger.im.util.LoginHelper;
 
 /**
  * Smack好友消息监听处理
- *
- * @author: laohu on 2017/1/18
- * @site: http://ittiger.cn
  */
 public class SmackFriendManagerListener implements ChatManagerListener {
     private static final String PATTERN = "[a-zA-Z0-9_]+@";

@@ -1,15 +1,5 @@
 package cn.ittiger.im.fragment;
 
-import butterknife.BindView;
-import butterknife.ButterKnife;
-import cn.ittiger.im.R;
-import cn.ittiger.im.adapter.EmotionAdapter;
-import cn.ittiger.im.ui.keyboard.emotion.EmotionItemClickListener;
-import cn.ittiger.im.util.EmotionDataHelper;
-import cn.ittiger.im.ui.keyboard.emotion.EmotionIndicatorView;
-import cn.ittiger.im.adapter.EmotionViewPagerAdapter;
-import cn.ittiger.util.DisplayUtils;
-
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.util.ArrayMap;
@@ -22,11 +12,18 @@ import android.widget.GridView;
 import java.util.ArrayList;
 import java.util.List;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
+import cn.ittiger.im.R;
+import cn.ittiger.im.adapter.EmotionAdapter;
+import cn.ittiger.im.adapter.EmotionViewPagerAdapter;
+import cn.ittiger.im.ui.keyboard.emotion.EmotionIndicatorView;
+import cn.ittiger.im.ui.keyboard.emotion.EmotionItemClickListener;
+import cn.ittiger.im.util.EmotionDataHelper;
+import cn.ittiger.util.DisplayUtils;
+
 /**
  * 表情Fragment
- *
- * @author: laohu on 2017/2/6
- * @site: http://ittiger.cn
  */
 public class EmotionFragment extends BaseEmotionFragment {
     @BindView(R.id.emotionIndicator)

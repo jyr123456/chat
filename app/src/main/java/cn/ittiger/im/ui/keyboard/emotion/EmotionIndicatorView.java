@@ -1,7 +1,5 @@
 package cn.ittiger.im.ui.keyboard.emotion;
 
-import cn.ittiger.im.R;
-
 import android.content.Context;
 import android.os.Build;
 import android.support.annotation.RequiresApi;
@@ -12,11 +10,10 @@ import android.widget.LinearLayout;
 import java.util.HashMap;
 import java.util.Map;
 
+import cn.ittiger.im.R;
+
 /**
  * 表情指示器
- *
- * @author: laohu on 2017/2/6
- * @site: http://ittiger.cn
  */
 public class EmotionIndicatorView extends LinearLayout {
     private Map<Integer, View> mIndicatorViewMap = new HashMap<>();//指示器页码索引与指示器圆的映射

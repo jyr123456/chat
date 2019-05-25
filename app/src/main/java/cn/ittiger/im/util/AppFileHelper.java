@@ -1,15 +1,13 @@
 package cn.ittiger.im.util;
 
+import java.io.File;
+
 import cn.ittiger.app.AppContext;
 import cn.ittiger.im.constant.MessageType;
 import cn.ittiger.util.ValueUtil;
 
-import java.io.File;
-
 /**
  * 应用相关文件帮助类
- * @author: laohu on 2017/1/18
- * @site: http://ittiger.cn
  */
 public class AppFileHelper {
 

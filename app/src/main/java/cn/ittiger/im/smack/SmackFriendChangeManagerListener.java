@@ -4,32 +4,15 @@ import android.content.Intent;
 
 import com.orhanobut.logger.Logger;
 
-import org.greenrobot.eventbus.EventBus;
-import org.jivesoftware.smack.SmackException;
 import org.jivesoftware.smack.StanzaListener;
-import org.jivesoftware.smack.chat.Chat;
-import org.jivesoftware.smack.chat.ChatManagerListener;
-import org.jivesoftware.smack.chat.ChatMessageListener;
-import org.jivesoftware.smack.packet.Message;
 import org.jivesoftware.smack.packet.Presence;
 import org.jivesoftware.smack.packet.Stanza;
 
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-
 import cn.ittiger.app.AppContext;
-import cn.ittiger.im.app.App;
-import cn.ittiger.im.bean.ChatMessage;
-import cn.ittiger.im.constant.Constant;
-import cn.ittiger.im.constant.MessageType;
-import cn.ittiger.im.util.DBHelper;
 import cn.ittiger.im.util.LoginHelper;
 
 /**
  * Smack好友消息监听处理
- *
- * @author: laohu on 2017/1/18
- * @site: http://ittiger.cn
  */
 public class SmackFriendChangeManagerListener implements StanzaListener {
 
@@ -73,7 +56,7 @@ public class SmackFriendChangeManagerListener implements StanzaListener {
             } else if (presence.getType().equals(Presence.Type.unsubscribe)) {//取消订阅
                 Logger.d("yangbinnew取消订阅" + from);
                 //发送广播传递response字符串
-                response = "抱歉，对方拒绝添加好友，将你从好友列表移除！";
+                response = "抱歉，对方拒绝添加好友，将你从好友列表移除";
                 Intent intent = new Intent();
                 intent.putExtra("response", response);
                 intent.setAction("cn.ittiger.im.activity.AddFriendActivity");

@@ -1,11 +1,5 @@
 package cn.ittiger.im.decoration;
 
-import cn.ittiger.app.AppContext;
-import cn.ittiger.im.R;
-import cn.ittiger.indexlist.ItemType;
-import cn.ittiger.indexlist.adapter.IndexStickyViewAdapter;
-import cn.ittiger.indexlist.entity.IndexStickyEntity;
-
 import android.graphics.Canvas;
 import android.graphics.Rect;
 import android.graphics.drawable.ColorDrawable;
@@ -13,10 +7,14 @@ import android.graphics.drawable.Drawable;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 
+import cn.ittiger.app.AppContext;
+import cn.ittiger.im.R;
+import cn.ittiger.indexlist.ItemType;
+import cn.ittiger.indexlist.adapter.IndexStickyViewAdapter;
+import cn.ittiger.indexlist.entity.IndexStickyEntity;
+
 /**
  * 联系人列表分割线
- * @author: laohu on 2016/12/27
- * @site: http://ittiger.cn
  */
 public class ContactItemDecoration extends RecyclerView.ItemDecoration {
 

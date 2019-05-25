@@ -1,5 +1,12 @@
 package cn.ittiger.im.activity;
 
+import android.os.Bundle;
+import android.support.v7.widget.AppCompatCheckBox;
+import android.text.Editable;
+import android.text.TextWatcher;
+import android.view.View;
+import android.widget.Button;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
@@ -15,28 +22,11 @@ import cn.ittiger.util.UIUtil;
 import cn.ittiger.util.ValueUtil;
 import rx.Observable;
 import rx.android.schedulers.AndroidSchedulers;
-import rx.functions.Action1;
 import rx.functions.Func1;
 import rx.schedulers.Schedulers;
 
-import android.annotation.SuppressLint;
-import android.app.Notification;
-import android.app.NotificationManager;
-import android.app.PendingIntent;
-import android.content.Intent;
-import android.os.Bundle;
-import android.support.v7.widget.AppCompatCheckBox;
-import android.text.Editable;
-import android.text.TextWatcher;
-import android.view.View;
-import android.widget.Button;
-import android.widget.RemoteViews;
-
 /**
  * 登陆openfire服务器
- *
- * @auther: hyl
- * @time: 2015-10-23下午1:36:59
  */
 public class LoginActivity extends IMBaseActivity {
     /**

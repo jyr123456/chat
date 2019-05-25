@@ -1,8 +1,5 @@
 package cn.ittiger.im.decoration;
 
-import cn.ittiger.app.AppContext;
-import cn.ittiger.im.R;
-
 import android.graphics.Canvas;
 import android.graphics.Rect;
 import android.graphics.drawable.ColorDrawable;
@@ -10,10 +7,11 @@ import android.graphics.drawable.Drawable;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 
+import cn.ittiger.app.AppContext;
+import cn.ittiger.im.R;
+
 /**
  * 列表垂直分割线
- * @author: laohu on 2017/2/6
- * @site: http://ittiger.cn
  */
 public class CommonVerticalItemDecoration extends RecyclerView.ItemDecoration {
 

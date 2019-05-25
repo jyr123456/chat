@@ -1,12 +1,28 @@
 package cn.ittiger.im.activity;
 
+import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.view.View;
+import android.widget.TextView;
+
+import com.orhanobut.logger.Logger;
+
+import org.jivesoftware.smack.roster.RosterEntry;
+import org.jivesoftware.smackx.muc.MultiUserChat;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Set;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import cn.ittiger.im.R;
 import cn.ittiger.im.activity.base.IMBaseActivity;
 import cn.ittiger.im.adapter.CheckableContactAdapter;
-import cn.ittiger.im.decoration.ContactItemDecoration;
 import cn.ittiger.im.bean.CheckableContactEntity;
+import cn.ittiger.im.decoration.ContactItemDecoration;
 import cn.ittiger.im.smack.SmackListenerManager;
 import cn.ittiger.im.smack.SmackManager;
 import cn.ittiger.im.smack.SmackMultiChatManager;
@@ -22,26 +38,8 @@ import rx.android.schedulers.AndroidSchedulers;
 import rx.functions.Action1;
 import rx.schedulers.Schedulers;
 
-import com.orhanobut.logger.Logger;
-
-import org.jivesoftware.smack.roster.RosterEntry;
-import org.jivesoftware.smackx.muc.MultiUserChat;
-
-import android.os.Bundle;
-import android.support.v7.widget.Toolbar;
-import android.view.Menu;
-import android.view.MenuItem;
-import android.view.View;
-import android.widget.TextView;
-
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Set;
-
 /**
  * 创建群聊界面
- * @author: laohu on 2017/1/24
- * @site: http://ittiger.cn
  */
 public class CreateMultiChatActivity extends IMBaseActivity
         implements Toolbar.OnMenuItemClickListener {

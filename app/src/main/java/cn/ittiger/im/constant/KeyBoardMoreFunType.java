@@ -2,8 +2,6 @@ package cn.ittiger.im.constant;
 
 /**
  * KeyBoard更多功能选项类型
- * @author: laohu on 2017/2/4
- * @site: http://ittiger.cn
  */
 public enum KeyBoardMoreFunType {
     NONE(-1),

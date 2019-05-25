@@ -1,5 +1,11 @@
 package cn.ittiger.im.bean;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
+import java.util.Date;
+import java.util.UUID;
+
 import cn.ittiger.database.annotation.Column;
 import cn.ittiger.database.annotation.PrimaryKey;
 import cn.ittiger.database.annotation.Table;
@@ -7,17 +13,8 @@ import cn.ittiger.im.constant.FileLoadState;
 import cn.ittiger.im.constant.MessageType;
 import cn.ittiger.util.DateUtil;
 
-import android.os.Parcel;
-import android.os.Parcelable;
-
-import java.util.Date;
-import java.util.UUID;
-
 /**
  * 聊天发送的消息
- *
- * @author: laohu on 2017/1/18
- * @site: http://ittiger.cn
  */
 @Table(name = "ChatMessage")
 public class ChatMessage implements Parcelable {

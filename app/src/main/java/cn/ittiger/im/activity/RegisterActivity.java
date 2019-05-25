@@ -27,10 +27,8 @@ import cn.ittiger.im.activity.base.IMBaseActivity;
 import cn.ittiger.im.bean.UserProfile;
 import cn.ittiger.im.smack.SmackManager;
 import cn.ittiger.im.util.DBQueryHelper;
-import cn.ittiger.im.util.SPUtils;
 import cn.ittiger.util.ActivityUtil;
 import cn.ittiger.util.UIUtil;
-import cn.ittiger.util.ValueUtil;
 import rx.Observable;
 import rx.android.schedulers.AndroidSchedulers;
 import rx.schedulers.Schedulers;
@@ -40,9 +38,6 @@ import static cn.ittiger.im.smack.SmackManager.parseName;
 
 /**
  * 注册
- *
- * @auther: hyl
- * @time: 2015-10-28上午10:52:49
  */
 public class RegisterActivity extends IMBaseActivity {
     @BindView(R.id.toolbar)

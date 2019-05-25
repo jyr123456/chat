@@ -1,13 +1,5 @@
 package cn.ittiger.im.ui.keyboard;
 
-import butterknife.BindView;
-import butterknife.ButterKnife;
-import cn.ittiger.im.R;
-import cn.ittiger.im.constant.KeyBoardMoreFunType;
-import cn.ittiger.im.ui.recyclerview.CommonRecyclerView;
-import cn.ittiger.im.ui.recyclerview.HeaderAndFooterAdapter;
-import cn.ittiger.im.ui.recyclerview.ViewHolder;
-
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.support.v7.widget.GridLayoutManager;
@@ -22,10 +14,16 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import java.util.List;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
+import cn.ittiger.im.R;
+import cn.ittiger.im.constant.KeyBoardMoreFunType;
+import cn.ittiger.im.ui.recyclerview.CommonRecyclerView;
+import cn.ittiger.im.ui.recyclerview.HeaderAndFooterAdapter;
+import cn.ittiger.im.ui.recyclerview.ViewHolder;
+
 /**
  * KeyBoard更多功能视图
- * @author: laohu on 2017/2/4
- * @site: http://ittiger.cn
  */
 public class KeyBoardMoreFunView extends FrameLayout implements CommonRecyclerView.OnItemClickListener {
     @BindView(R.id.moreFunGridView)

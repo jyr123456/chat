@@ -7,8 +7,6 @@ import org.jivesoftware.smack.XMPPConnection;
 
 /**
  * 服务器连接监听
- * @author: laohu on 2017/1/18
- * @site: http://ittiger.cn
  */
 public class SmackConnectionListener implements ConnectionListener {
 

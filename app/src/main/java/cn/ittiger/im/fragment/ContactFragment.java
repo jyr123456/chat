@@ -1,34 +1,5 @@
 package cn.ittiger.im.fragment;
 
-import butterknife.BindView;
-import butterknife.ButterKnife;
-import cn.ittiger.base.BaseFragment;
-import cn.ittiger.im.R;
-import cn.ittiger.im.activity.GroupListActivity;
-import cn.ittiger.im.adapter.ContactAdapter;
-import cn.ittiger.im.decoration.ContactItemDecoration;
-import cn.ittiger.im.adapter.viewholder.ContactViewHolder;
-import cn.ittiger.im.bean.ContactEntity;
-import cn.ittiger.im.bean.ContactMenuEntity;
-import cn.ittiger.im.ui.ChatPromptDialog;
-import cn.ittiger.im.smack.SmackManager;
-import cn.ittiger.indexlist.IndexStickyView;
-import cn.ittiger.indexlist.adapter.IndexHeaderFooterAdapter;
-import cn.ittiger.indexlist.listener.OnItemClickListener;
-import cn.ittiger.util.UIUtil;
-import rx.Observable;
-import rx.Subscriber;
-import rx.android.schedulers.AndroidSchedulers;
-import rx.functions.Action1;
-import rx.schedulers.Schedulers;
-
-import com.orhanobut.logger.Logger;
-
-import org.greenrobot.eventbus.EventBus;
-import org.greenrobot.eventbus.Subscribe;
-import org.greenrobot.eventbus.ThreadMode;
-import org.jivesoftware.smack.roster.RosterEntry;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -38,14 +9,39 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.orhanobut.logger.Logger;
+
+import org.greenrobot.eventbus.EventBus;
+import org.greenrobot.eventbus.Subscribe;
+import org.greenrobot.eventbus.ThreadMode;
+import org.jivesoftware.smack.roster.RosterEntry;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
+import cn.ittiger.base.BaseFragment;
+import cn.ittiger.im.R;
+import cn.ittiger.im.activity.GroupListActivity;
+import cn.ittiger.im.adapter.ContactAdapter;
+import cn.ittiger.im.adapter.viewholder.ContactViewHolder;
+import cn.ittiger.im.bean.ContactEntity;
+import cn.ittiger.im.bean.ContactMenuEntity;
+import cn.ittiger.im.decoration.ContactItemDecoration;
+import cn.ittiger.im.smack.SmackManager;
+import cn.ittiger.im.ui.ChatPromptDialog;
+import cn.ittiger.indexlist.IndexStickyView;
+import cn.ittiger.indexlist.adapter.IndexHeaderFooterAdapter;
+import cn.ittiger.indexlist.listener.OnItemClickListener;
+import cn.ittiger.util.UIUtil;
+import rx.Observable;
+import rx.android.schedulers.AndroidSchedulers;
+import rx.schedulers.Schedulers;
+
 /**
  * 联系人列表
- * @author: laohu on 2016/12/24
- * @site: http://ittiger.cn
  */
 public class ContactFragment extends BaseFragment {
     @BindView(R.id.contactRefreshLayout)
@@ -73,6 +69,7 @@ public class ContactFragment extends BaseFragment {
         startRefresh();
         Observable.create((Observable.OnSubscribe<List<ContactEntity>>) subscriber -> {
             Set<RosterEntry> friends = SmackManager.getInstance().getAllFriends();
+
             List<ContactEntity> list = new ArrayList<>();
             for (RosterEntry friend : friends) {
                 list.add(new ContactEntity(friend));
