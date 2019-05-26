@@ -1,5 +1,6 @@
 package cn.ittiger.im.activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.TextInputLayout;
 import android.support.v7.widget.AppCompatEditText;
@@ -24,11 +25,15 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 import cn.ittiger.im.R;
 import cn.ittiger.im.activity.base.IMBaseActivity;
+import cn.ittiger.im.bean.User;
 import cn.ittiger.im.bean.UserProfile;
 import cn.ittiger.im.smack.SmackManager;
 import cn.ittiger.im.util.DBQueryHelper;
+import cn.ittiger.im.util.LoginHelper;
+import cn.ittiger.im.util.SPUtils;
 import cn.ittiger.util.ActivityUtil;
 import cn.ittiger.util.UIUtil;
+import cn.ittiger.util.ValueUtil;
 import rx.Observable;
 import rx.android.schedulers.AndroidSchedulers;
 import rx.schedulers.Schedulers;
@@ -38,6 +43,9 @@ import static cn.ittiger.im.smack.SmackManager.parseName;
 
 /**
  * 注册
+ *
+ * @auther: hyl
+ * @time: 2015-10-28上午10:52:49
  */
 public class RegisterActivity extends IMBaseActivity {
     @BindView(R.id.toolbar)
@@ -176,8 +184,15 @@ public class RegisterActivity extends IMBaseActivity {
                         UserProfile userProfile =  DBQueryHelper.queryUserProfile(jid,username);
                         Log.i("--------",userProfile.getNickname());
 
+                        //LoginHelper.saveUser(new User(username+"",password+""));
                         UIUtil.showToast(RegisterActivity.this, R.string.hint_register_success);
-                        ActivityUtil.finishActivity(RegisterActivity.this);
+
+                        Intent i=new Intent(RegisterActivity.this,LoginActivity.class);
+                        i.putExtra("username",username);
+                        i.putExtra("password",password);
+                        startActivity(i);
+
+                        //ActivityUtil.finishActivity(RegisterActivity.this);
                     } else {
                         UIUtil.showToast(RegisterActivity.this, R.string.hint_register_failure);
                     }

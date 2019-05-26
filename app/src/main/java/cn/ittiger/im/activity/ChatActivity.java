@@ -111,9 +111,17 @@ public class ChatActivity extends BaseChatActivity {
      */
     @Override
     public void send(final String message) {
+        //判断该好友是否在线 ，true在线， flase不在线
+        Boolean b = SmackManager.getInstance().isonline(mChatUser.getFriendNickname()+"@www.jyr.com");
+        if(!b){
+            UIUtil.showToast(ChatActivity.this, "该好友已离线，无法发送！");
+            return;
+        }
         if (ValueUtil.isEmpty(message)) {
             return;
         }
+
+
         Observable.just(message)
                 .observeOn(Schedulers.io())
                 .subscribe(new Action1<String>() {
@@ -148,6 +156,12 @@ public class ChatActivity extends BaseChatActivity {
      * @param file
      */
     public void sendFile(final File file, int messageType) {
+        //判断该好友是否在线 ，true在线， flase不在线
+        Boolean b = SmackManager.getInstance().isonline(mChatUser.getFriendNickname()+"@www.jyr.com");
+        if(!b){
+            UIUtil.showToast(ChatActivity.this, "该好友已离线，无法发送！");
+            return;
+        }
         final OutgoingFileTransfer transfer = SmackManager.getInstance().getSendFileTransfer(mChatUser.getFileJid());
         String sendType = null;
         try {
@@ -174,6 +188,7 @@ public class ChatActivity extends BaseChatActivity {
         SmackManager.getInstance().addFileTransferListener(request -> {
             // Accept it
             IncomingFileTransfer transfer = request.accept();
+            IncomingFileTransfer transfer2 = request.accept();
             try {
                 int messageType = 0;
                 if (request.getMimeType().contains("image")) {
@@ -188,80 +203,21 @@ public class ChatActivity extends BaseChatActivity {
                 }
                 String fileName = String.valueOf(System.currentTimeMillis());
                 File file = new File(FileUtils.getReceivedImagesDir(ChatActivity.this), request.getFileName());
-
-                System.out.println("----------------------------------");
-
-                System.out.println("request.getFileName()="+request.getFileName());
-                System.out.println("----------------------------------")        ;
                 transfer.recieveFile(file);
 
-
-/*
-                try {
-                      File filePath = new File("storage/emulated/0/", "fcyt");
-                      if (!filePath.exists()) {
-                           filePath.mkdirs();
-                       }
-                    //                    File file = new File( Environment
-                    //                            .getExternalStorageDirectory()+"/fcyt/"
-                    //                            +"/"+ request.getFileName());
-                      String streamID = request.getStreamID();
-                      File file2 = new File(filePath, request.getFileName());
-                      System.out.println(request.getFileName() + "接收路径" + file.getPath() + "接收语音文件名称" + file.exists());
-                      transfer.recieveFile(file2);
-                 } catch (Exception e) {
-                       e.printStackTrace();
-                 }
-
-*/
-
-                checkTransferStatus(transfer, file, messageType, false);
-
-
-                /*// 首先保存图片
-                File file2 = null;
-                String fileName2 = System.currentTimeMillis() + ".jpg";
-                File root = new File(Environment.getExternalStorageDirectory(), getPackageName());
-                File dir = new File(root, "images");
-                if (dir.mkdirs() || dir.isDirectory()) {
-                    file2 = new File(dir, fileName2);
+                if (request.getMimeType().contains("image")) {
+                    //保存图片到本地图库
+                    File file2 = new File("/storage/emulated/0/Pictures/", request.getFileName());
+                    transfer2.recieveFile(file2);
+                }else{
+                    //保存文件到本地文件夹根目录
+                    File file2 = new File("/storage/emulated/0/", request.getFileName());
+                    transfer2.recieveFile(file2);
                 }
-                try {
-                    FileOutputStream fos = new FileOutputStream(file2);
-
-                    //bitmap.compress(Bitmap.CompressFormat.JPEG, 100, fos);
-                    fos.flush();
-                    fos.close();
-                } catch (FileNotFoundException e) {
-                    e.printStackTrace();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-                //其次把文件插入到系统图库
-                try {
-                    MediaStore.Images.Media.insertImage(this.getContentResolver(),
-                            file2.getAbsolutePath(), fileName2, null);
-                } catch (FileNotFoundException e) {
-                    e.printStackTrace();
-                }
-                // 通知图库更新
-                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
-                    MediaScannerConnection.scanFile(this, new String[]{file2.getAbsolutePath()}, null,
-                            new MediaScannerConnection.OnScanCompletedListener() {
-                                public void onScanCompleted(String path, Uri uri) {
-                                    Intent mediaScanIntent = new Intent(Intent.ACTION_MEDIA_SCANNER_SCAN_FILE);
-                                    mediaScanIntent.setData(uri);
-                                    sendBroadcast(mediaScanIntent);
-                                }
-                            });
-                } else {
-                    String relationDir = file.getParent();
-                    File file1 = new File(relationDir);
-                    sendBroadcast(new Intent(Intent.ACTION_MEDIA_MOUNTED, Uri.fromFile(file1.getAbsoluteFile())));
-                }*/
 
 
-            } catch (SmackException | IOException e) {
+
+            } catch (Exception e) {
                 Logger.e(e, "receive file failure");
             }
         });
@@ -327,6 +283,12 @@ public class ChatActivity extends BaseChatActivity {
      */
     @Override
     public void sendVoice(File audioFile) {
+        //判断该好友是否在线 ，true在线， flase不在线
+        Boolean b = SmackManager.getInstance().isonline(mChatUser.getFriendNickname()+"@www.jyr.com");
+        if(!b){
+            UIUtil.showToast(ChatActivity.this, "该好友已离线，无法发送！");
+            return;
+        }
         sendFile(audioFile, MessageType.MESSAGE_TYPE_VOICE.value());
     }
 

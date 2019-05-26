@@ -103,6 +103,9 @@ public class MainActivity extends IMBaseActivity
 
     private MyReceiver receiver;
 
+    public  String username="";
+    public  String password="";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -123,6 +126,13 @@ public class MainActivity extends IMBaseActivity
         SmackListenerManager.addGlobalListener();
         SmackManager.getInstance().RosterListener();
 
+        Intent i=getIntent();
+        if(i.getStringExtra("username")!=null){
+            username=i.getStringExtra("username");
+        }
+        if(i.getStringExtra("password")!=null){
+            password=i.getStringExtra("password");
+        }
 //        SmackManager.getInstance().addFriendLister();
     }
 
@@ -213,7 +223,11 @@ public class MainActivity extends IMBaseActivity
         int id = item.getItemId();
         switch (id) {
             case R.id.change_use: //修改资料
-                ActivityUtil.startActivity(mActivity, ChangeInfoActivity.class);
+                //ActivityUtil.startActivity(mActivity, ChangeInfoActivity.class);
+                Intent i=new Intent(MainActivity.this,ChangeInfoActivity.class);
+                i.putExtra("username",username);
+                i.putExtra("password",password);
+                startActivity(i);
                 break;
             case R.id.login_out://退出登录
                 new EasyDialog(this)

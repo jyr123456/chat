@@ -68,8 +68,8 @@ public class SmackManager {
     /**
      * Xmpp服务器地址
      */
-    public static final String SERVER_IP = "172.20.10.2" ;
-    //public static final String SERVER_IP = "192.168.43.191" ;
+    //public static final String SERVER_IP = "172.20.10.2" ;
+    public static final String SERVER_IP = "192.168.43.27" ;
     /*
      * Xmpp 服务器端口"
      */
@@ -300,6 +300,21 @@ public class SmackManager {
             return false;
         }
     }
+     /*
+     *判断用户是否在线
+     *    jid   --> hc123456@www.jyr.com
+     * @return
+     *
+     * */
+     public boolean isonline(String jid){
+         Roster roster = Roster.getInstanceFor(SmackManager.getInstance().getConnection());
+         if (roster.getPresence(jid + "/Smack").getStatus() == null){
+             return false;
+         }else {
+            return true;
+         }
+     }
+
 
     /**
      * 断开连接，注销

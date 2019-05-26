@@ -45,8 +45,8 @@ public class UserInfoActivity extends IMBaseActivity implements Response.Listene
     @BindView(R.id.tv_delete)
     TextView tvDelete;
 
-    String user;
-    String nickname;
+    public String user;
+    public String nickname;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -71,14 +71,8 @@ public class UserInfoActivity extends IMBaseActivity implements Response.Listene
 
     @OnClick(R.id.tv_delete)
     public void onViewClicked() {
-        detelFriend(user);
-        //jyr修改
-        if ((int) tvDelete.getTag() == 1) {
-            detelFriend(user);
-        } else {
-           addFriend(user);
-        }
-        //
+        String  jid = nickname + "@" + SmackManager.SERVER_NAME;
+        detelFriend(jid);
     }
 
     private SearchUserTask task;
@@ -193,7 +187,7 @@ public class UserInfoActivity extends IMBaseActivity implements Response.Listene
 
     @Override
     public void onErrorResponse(Exception exception) {
-        Toast.makeText(this, R.string.search_user_error, Toast.LENGTH_SHORT).show();
+       // Toast.makeText(this, R.string.search_user_error, Toast.LENGTH_SHORT).show();
     }
 
 
