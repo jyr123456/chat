@@ -12,8 +12,6 @@ import cn.ittiger.im.R;
 
 /**
  * 可清除的EditText
- * @auther: hyl
- * @time: 2015-10-20下午3:02:42
  */
 public class ClearEditText extends EditText {
 	/**

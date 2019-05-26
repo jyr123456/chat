@@ -1,8 +1,5 @@
 package cn.ittiger.im.util;
 
-import cn.ittiger.im.R;
-import cn.ittiger.im.constant.EmotionType;
-
 import android.content.Context;
 import android.content.res.Resources;
 import android.graphics.Bitmap;
@@ -15,8 +12,10 @@ import android.widget.TextView;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import cn.ittiger.im.R;
+import cn.ittiger.im.constant.EmotionType;
+
 /**
- * Created by ylhu on 17-2-6.
  */
 public class EmotionUtil {
 

@@ -3,7 +3,6 @@ package cn.ittiger.im.bean;
 import java.io.Serializable;
 
 /**
- * Created by laohu on 16-12-14.
  */
 public class User implements Serializable {
 

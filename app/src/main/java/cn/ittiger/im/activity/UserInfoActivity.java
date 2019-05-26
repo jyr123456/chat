@@ -1,6 +1,5 @@
 package cn.ittiger.im.activity;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.widget.ImageView;
@@ -17,7 +16,6 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import cn.ittiger.im.R;
-import cn.ittiger.im.activity.ChatActivity;
 import cn.ittiger.im.activity.base.IMBaseActivity;
 import cn.ittiger.im.activity.task.Response;
 import cn.ittiger.im.activity.task.SearchUserTask;
@@ -32,10 +30,7 @@ import rx.android.schedulers.AndroidSchedulers;
 import rx.schedulers.Schedulers;
 
 import static cn.ittiger.im.bean.UserProfile.TYPE_CONTACT;
-import static cn.ittiger.im.bean.UserProfile.TYPE_NOT_CONTACT;
 import static cn.ittiger.im.bean.UserProfile.TYPE_UNKNOWN;
-import static cn.ittiger.im.smack.SmackManager.parseBareAddress;
-import static cn.ittiger.im.smack.SmackManager.parseName;
 
 public class UserInfoActivity extends IMBaseActivity implements Response.Listener<UserProfile>{
     @BindView(R.id.toolbar)
@@ -47,8 +42,8 @@ public class UserInfoActivity extends IMBaseActivity implements Response.Listene
     ImageView iamgePhoto;
     @BindView(R.id.tv_nickname)
     TextView tvNickname;
-    @BindView(R.id.tv_add)
-    TextView tvAdd;
+    @BindView(R.id.tv_delete)
+    TextView tvDelete;
 
     String user;
     String nickname;
@@ -74,14 +69,16 @@ public class UserInfoActivity extends IMBaseActivity implements Response.Listene
     }
 
 
-    @OnClick(R.id.tv_add)
+    @OnClick(R.id.tv_delete)
     public void onViewClicked() {
         detelFriend(user);
-        if ((int) tvAdd.getTag() == 1) {
-            //detelFriend(user);
+        //jyr修改
+        if ((int) tvDelete.getTag() == 1) {
+            detelFriend(user);
         } else {
-            //addFriend(user);
+           addFriend(user);
         }
+        //
     }
 
     private SearchUserTask task;
@@ -181,10 +178,10 @@ public class UserInfoActivity extends IMBaseActivity implements Response.Listene
             }else {
                 tvNickname.setText(result.getNickname());
                 if (result.getType() == TYPE_CONTACT) {
-                    tvAdd.setTag(1);
-                    tvAdd.setText("删除");
+                    tvDelete.setTag(1);
+                    tvDelete.setText("删除");
                 } else {
-                    tvAdd.setTag(0);
+                    tvDelete.setTag(0);
 
                 }
 

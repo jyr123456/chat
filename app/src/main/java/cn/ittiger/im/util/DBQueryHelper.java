@@ -1,21 +1,19 @@
 package cn.ittiger.im.util;
 
+import org.jivesoftware.smack.roster.RosterEntry;
+import org.jivesoftware.smackx.muc.MultiUserChat;
+
+import java.util.List;
+
 import cn.ittiger.im.bean.ChatMessage;
 import cn.ittiger.im.bean.ChatRecord;
 import cn.ittiger.im.bean.ChatUser;
 import cn.ittiger.im.bean.UserProfile;
 import cn.ittiger.im.constant.Constant;
 
-import org.jivesoftware.smack.roster.RosterEntry;
-import org.jivesoftware.smackx.muc.MultiUserChat;
-
-import java.util.List;
-
 /**
  * 数据库查询帮助类
  *
- * @author: laohu on 2017/1/20
- * @site: http://ittiger.cn
  */
 public class DBQueryHelper {
 

@@ -1,6 +1,5 @@
 package cn.ittiger.im.activity;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
@@ -30,9 +29,6 @@ import static cn.ittiger.im.bean.UserProfile.TYPE_NOT_CONTACT;
 
 /**
  * 添加好友
- *
- * @author: laohu on 2016/12/24
- * @site: http://ittiger.cn
  */
 public class AddFriendActivity extends IMBaseActivity implements View.OnClickListener {
     public static final String EXTRA_DATA_NAME_USER_PROFILE = "com.mstr.letschat.UserProfile";
@@ -50,7 +46,7 @@ public class AddFriendActivity extends IMBaseActivity implements View.OnClickLis
         setContentView(R.layout.activity_addfriend_layout);
         profile = getIntent().getParcelableExtra(EXTRA_DATA_NAME_USER_PROFILE);
 
-        ImageView imageView = (ImageView) findViewById(R.id.avatar);
+        ImageView imageView = findViewById(R.id.avatar);
         if (profile != null) {
             avatar = profile.getAvatar();
         }
@@ -65,7 +61,7 @@ public class AddFriendActivity extends IMBaseActivity implements View.OnClickLis
 
         ((TextView) findViewById(R.id.tv_nickname)).setText(profile.getNickname());
 
-        button = (Button) findViewById(R.id.btn);
+        button = findViewById(R.id.btn);
         button.setOnClickListener(this);
 
         String status = profile.getStatus();
@@ -100,14 +96,15 @@ public class AddFriendActivity extends IMBaseActivity implements View.OnClickLis
                 } else {
                     onSendMessageClick();
                 }
-
+//jyr修改
 //            if (!isFriend(profile.getJid())) {
 //                addFriend();
 //            } else {
-//                onSendMessageClick();
+//               onSendMessageClick();
 //            }
                 break;
         }
+        //
     }
 
     private void setButtonText() {
@@ -119,12 +116,13 @@ public class AddFriendActivity extends IMBaseActivity implements View.OnClickLis
         } else {
             button.setText("发送消息");
         }
-
-//        if (isFriend(profile.getJid())) {
-//            button.setText("发送消息");
-//        } else {
-//            button.setText("添加");
-//        }
+//jyr修改
+      if (isFriend(profile.getJid())) {
+          button.setText("发送消息");
+       } else {
+          button.setText("添加");
+       }
+      //
     }
 
 

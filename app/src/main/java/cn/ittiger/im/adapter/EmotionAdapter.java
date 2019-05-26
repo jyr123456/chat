@@ -1,9 +1,5 @@
 package cn.ittiger.im.adapter;
 
-import cn.ittiger.im.R;
-import cn.ittiger.im.constant.EmotionType;
-import cn.ittiger.im.util.EmotionDataHelper;
-
 import android.content.Context;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,11 +9,12 @@ import android.widget.ImageView;
 
 import java.util.List;
 
+import cn.ittiger.im.R;
+import cn.ittiger.im.constant.EmotionType;
+import cn.ittiger.im.util.EmotionDataHelper;
+
 /**
  * 表情适配器
- *
- * @author: laohu on 2017/2/6
- * @site: http://ittiger.cn
  */
 public class EmotionAdapter extends BaseAdapter {
 

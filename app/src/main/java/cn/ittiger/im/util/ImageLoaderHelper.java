@@ -1,7 +1,6 @@
 package cn.ittiger.im.util;
 
 import android.content.Context;
-import android.graphics.drawable.Drawable;
 import android.widget.ImageView;
 
 import com.bumptech.glide.Glide;
@@ -9,8 +8,6 @@ import com.bumptech.glide.Glide;
 /**
  * 图片参数帮助类
  *
- * @author: laohu on 2016/12/24
- * @site: http://ittiger.cn
  */
 public class ImageLoaderHelper {
 

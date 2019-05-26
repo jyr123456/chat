@@ -1,5 +1,13 @@
 package cn.ittiger.im.adapter;
 
+import android.content.Context;
+import android.text.SpannableString;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+
+import java.util.List;
+
 import cn.ittiger.im.R;
 import cn.ittiger.im.adapter.viewholder.ChatRecordViewHolder;
 import cn.ittiger.im.bean.ChatRecord;
@@ -11,20 +19,8 @@ import cn.ittiger.im.util.EmotionUtil;
 import cn.ittiger.im.util.ImageLoaderHelper;
 import cn.ittiger.util.ValueUtil;
 
-import android.content.Context;
-import android.text.SpannableString;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-
-import java.util.List;
-
-import static android.R.id.message;
-
 /**
  * 聊天记录列表适配器
- * @author: laohu on 2017/1/22
- * @site: http://ittiger.cn
  */
 public class ChatRecordAdapter extends HeaderAndFooterAdapter<ChatRecord> {
     private Context mContext;

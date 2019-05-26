@@ -1,18 +1,5 @@
 package cn.ittiger.im.adapter;
 
-import butterknife.BindView;
-import butterknife.ButterKnife;
-import cn.ittiger.im.R;
-import cn.ittiger.im.bean.ChatMessage;
-import cn.ittiger.im.constant.EmotionType;
-import cn.ittiger.im.constant.FileLoadState;
-import cn.ittiger.im.constant.MessageType;
-import cn.ittiger.im.ui.recyclerview.HeaderAndFooterAdapter;
-import cn.ittiger.im.ui.recyclerview.ViewHolder;
-import cn.ittiger.im.util.ChatTimeUtil;
-import cn.ittiger.im.util.EmotionUtil;
-import cn.ittiger.im.util.ImageLoaderHelper;
-
 import android.content.Context;
 import android.graphics.drawable.AnimationDrawable;
 import android.media.MediaPlayer;
@@ -29,10 +16,22 @@ import java.io.File;
 import java.io.IOException;
 import java.util.List;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
+import cn.ittiger.im.R;
+import cn.ittiger.im.bean.ChatMessage;
+import cn.ittiger.im.constant.EmotionType;
+import cn.ittiger.im.constant.FileLoadState;
+import cn.ittiger.im.constant.MessageType;
+import cn.ittiger.im.ui.recyclerview.HeaderAndFooterAdapter;
+import cn.ittiger.im.ui.recyclerview.ViewHolder;
+import cn.ittiger.im.util.ChatTimeUtil;
+import cn.ittiger.im.util.EmotionUtil;
+import cn.ittiger.im.util.ImageLoaderHelper;
+
 /**
  * 消息列表数据适配器
- * @author: laohu on 2017/1/17
- * @site: http://ittiger.cn
+
  */
 public class ChatAdapter extends HeaderAndFooterAdapter<ChatMessage> {
     private static final int VIEW_TYPE_ME = 1;

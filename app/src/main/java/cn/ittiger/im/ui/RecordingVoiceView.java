@@ -1,9 +1,5 @@
 package cn.ittiger.im.ui;
 
-import butterknife.BindView;
-import butterknife.ButterKnife;
-import cn.ittiger.im.R;
-
 import android.content.Context;
 import android.os.Build;
 import android.support.annotation.RequiresApi;
@@ -11,8 +7,11 @@ import android.util.AttributeSet;
 import android.view.View;
 import android.widget.FrameLayout;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
+import cn.ittiger.im.R;
+
 /**
- * Created by ylhu on 17-2-7.
  */
 public class RecordingVoiceView extends FrameLayout {
     @BindView(R.id.recording_voice_container)

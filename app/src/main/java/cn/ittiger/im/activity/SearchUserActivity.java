@@ -33,8 +33,8 @@ public class SearchUserActivity extends AppCompatActivity implements SearchView.
 
         setContentView(R.layout.activity_search_user);
 
-        hintWrapper = (LinearLayout)findViewById(R.id.ll_hint_wrapper);
-        hintText = (TextView)findViewById(R.id.tv_hint);
+        hintWrapper = findViewById(R.id.ll_hint_wrapper);
+        hintText = findViewById(R.id.tv_hint);
         hintText.setOnClickListener(this);
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);

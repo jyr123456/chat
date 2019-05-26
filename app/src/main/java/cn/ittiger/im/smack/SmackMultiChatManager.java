@@ -1,14 +1,5 @@
 package cn.ittiger.im.smack;
 
-import cn.ittiger.im.bean.MultiChatRoom;
-import cn.ittiger.im.util.DBHelper;
-import cn.ittiger.im.util.LoginHelper;
-import cn.ittiger.util.ValueUtil;
-import rx.Observable;
-import rx.Subscriber;
-import rx.functions.Action1;
-import rx.schedulers.Schedulers;
-
 import com.orhanobut.logger.Logger;
 
 import org.jivesoftware.smackx.disco.ServiceDiscoveryManager;
@@ -18,11 +9,17 @@ import org.jivesoftware.smackx.muc.MultiUserChat;
 
 import java.util.List;
 
+import cn.ittiger.im.bean.MultiChatRoom;
+import cn.ittiger.im.util.DBHelper;
+import cn.ittiger.im.util.LoginHelper;
+import cn.ittiger.util.ValueUtil;
+import rx.Observable;
+import rx.Subscriber;
+import rx.functions.Action1;
+import rx.schedulers.Schedulers;
+
 /**
  * 群聊管理类
- *
- * @author: laohu on 2017/2/3
- * @site: http://ittiger.cn
  */
 public class SmackMultiChatManager {
 

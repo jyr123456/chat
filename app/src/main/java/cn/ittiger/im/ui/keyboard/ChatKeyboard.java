@@ -1,7 +1,5 @@
 package cn.ittiger.im.ui.keyboard;
 
-import java.io.File;
-
 import android.app.Activity;
 import android.content.Context;
 import android.util.AttributeSet;
@@ -10,6 +8,8 @@ import android.view.ViewGroup;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.RelativeLayout;
+
+import java.io.File;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -25,8 +25,6 @@ import static android.widget.RelativeLayout.CENTER_IN_PARENT;
 
 /**
  * 聊天键盘
- * @author: laohu on 2016/12/24
- * @site: http://ittiger.cn
  */
 public class ChatKeyboard extends BaseKeyboardLayout implements
         KeyBoardMoreFunView.OnMoreFunItemClickListener{
@@ -229,9 +227,6 @@ public class ChatKeyboard extends BaseKeyboardLayout implements
 
     /**
      * 聊天操作监听接口
-     *
-     * @auther: hyl
-     * @time: 2015-10-28下午4:39:06
      */
     public interface KeyboardOperateListener {
         /**

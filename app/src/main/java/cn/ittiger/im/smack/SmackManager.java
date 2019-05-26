@@ -68,8 +68,8 @@ public class SmackManager {
     /**
      * Xmpp服务器地址
      */
-    //public static final String SERVER_IP = "172.20.10.2" ;
-    public static final String SERVER_IP = "192.168.43.27" ;
+    public static final String SERVER_IP = "172.20.10.2" ;
+    //public static final String SERVER_IP = "192.168.43.191" ;
     /*
      * Xmpp 服务器端口"
      */
@@ -77,8 +77,8 @@ public class SmackManager {
     /**
      * 服务器名称
      */
-    //public static final String SERVER_NAME = "www.jyr.com";
-    public static final String SERVER_NAME = "sky-20180609xfh.mshome.net";
+    public static final String SERVER_NAME = "www.jyr.com";
+    //public static final String SERVER_NAME = "sky-20180609xfh.mshome.net";
     /**
      *
      */
@@ -355,12 +355,13 @@ public class SmackManager {
                     presence.setStatus("在线");
                     mConnection.sendStanza(presence);
                     break;
-                case 1://设置Q我吧
+                /*case 1://设置Q我吧
                     presence = new Presence(Presence.Type.available);
                     presence.setMode(Presence.Mode.chat);
                     presence.setStatus("Q我吧");
                     mConnection.sendStanza(presence);
                     break;
+                    */
                 case 2://设置忙碌
                     presence = new Presence(Presence.Type.available);
                     presence.setMode(Presence.Mode.dnd);

@@ -1,13 +1,10 @@
 package cn.ittiger.im.activity;
 
-import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
-import android.media.MediaScannerConnection;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
-import android.os.Environment;
 import android.provider.MediaStore;
 import android.support.v4.content.FileProvider;
 import android.util.Log;
@@ -23,7 +20,6 @@ import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
 import org.greenrobot.eventbus.ThreadMode;
 import org.jivesoftware.smack.SmackException;
-import org.jivesoftware.smack.XMPPException;
 import org.jivesoftware.smack.chat.Chat;
 import org.jivesoftware.smackx.filetransfer.FileTransfer;
 import org.jivesoftware.smackx.filetransfer.IncomingFileTransfer;
@@ -31,11 +27,7 @@ import org.jivesoftware.smackx.filetransfer.OutgoingFileTransfer;
 import org.json.JSONObject;
 
 import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
 import java.io.IOException;
-import java.io.ObjectOutputStream;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 
@@ -62,13 +54,8 @@ import rx.android.schedulers.AndroidSchedulers;
 import rx.functions.Action1;
 import rx.schedulers.Schedulers;
 
-import static android.os.Build.ID;
-
 /**
  * 单聊窗口
- *
- * @author: laohu on 2017/1/12
- * @site: http://ittiger.cn
  */
 public class ChatActivity extends BaseChatActivity {
     @BindView(R.id.image_info)
@@ -209,7 +196,7 @@ public class ChatActivity extends BaseChatActivity {
                 transfer.recieveFile(file);
 
 
-
+/*
                 try {
                       File filePath = new File("storage/emulated/0/", "fcyt");
                       if (!filePath.exists()) {
@@ -226,7 +213,7 @@ public class ChatActivity extends BaseChatActivity {
                        e.printStackTrace();
                  }
 
-
+*/
 
                 checkTransferStatus(transfer, file, messageType, false);
 

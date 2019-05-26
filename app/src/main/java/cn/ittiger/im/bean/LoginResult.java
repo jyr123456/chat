@@ -1,7 +1,7 @@
 package cn.ittiger.im.bean;
 
 /**
- * Created by ylhu on 16-12-14.
+ * Created by jyr on 19-4-20.
  */
 public class LoginResult {
 

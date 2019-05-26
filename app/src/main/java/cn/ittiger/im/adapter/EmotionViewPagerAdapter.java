@@ -7,8 +7,6 @@ import android.view.ViewGroup;
 import java.util.List;
 
 /**
- * @author: laohu on 2017/2/6
- * @site: http://ittiger.cn
  */
 public class EmotionViewPagerAdapter extends PagerAdapter {
     private List<View> mViewList;

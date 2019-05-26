@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import org.jivesoftware.smack.packet.Presence;
 import org.jivesoftware.smack.roster.Roster;
 
 import java.io.BufferedReader;
@@ -26,9 +27,6 @@ import static cn.ittiger.im.smack.SmackManager.parseName;
 
 /**
  * 联系人列表数据适配器
- *
- * @author: laohu on 2016/12/27
- * @site: http://ittiger.cn
  */
 public class ContactAdapter extends IndexStickyViewAdapter<ContactEntity> {
     private Context mContext;
@@ -82,7 +80,10 @@ public class ContactAdapter extends IndexStickyViewAdapter<ContactEntity> {
         }
 
         Roster roster = Roster.getInstanceFor(SmackManager.getInstance().getConnection());
-        roster.getPresence(jid).getStatus();
+        Presence pr1 = roster.getPresence(jid);
+        Presence pr2 = roster.getPresence(jid + "/Smack");
+        String str1 = roster.getPresence(jid).getStatus();
+        String str2 = roster.getPresence(jid + "/Smack").getStatus();
         if (roster.getPresence(jid + "/Smack").getStatus() == null){
             viewHolder.getTextViewStatus().setText("离线" );
         }else {

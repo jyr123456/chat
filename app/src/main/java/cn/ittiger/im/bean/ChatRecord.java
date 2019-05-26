@@ -1,18 +1,15 @@
 package cn.ittiger.im.bean;
 
+import android.os.Parcel;
+
 import cn.ittiger.database.annotation.Column;
 import cn.ittiger.database.annotation.Table;
 import cn.ittiger.im.constant.Constant;
 import cn.ittiger.im.smack.SmackManager;
 import cn.ittiger.util.DateUtil;
 
-import android.os.Parcel;
-
 /**
  * 聊天记录实体对象
- *
- * @author: laohu on 2017/1/22
- * @site: http://ittiger.cn
  */
 @Table(name = "ChatRecord")
 public class ChatRecord extends ChatUser {

@@ -1,10 +1,5 @@
 package cn.ittiger.im.smack;
 
-import cn.ittiger.im.bean.ChatUser;
-import cn.ittiger.im.constant.Constant;
-import cn.ittiger.im.util.DBHelper;
-import cn.ittiger.im.util.LoginHelper;
-
 import com.orhanobut.logger.Logger;
 
 import org.jivesoftware.smack.XMPPConnection;
@@ -12,10 +7,13 @@ import org.jivesoftware.smack.packet.Message;
 import org.jivesoftware.smackx.muc.InvitationListener;
 import org.jivesoftware.smackx.muc.MultiUserChat;
 
+import cn.ittiger.im.bean.ChatUser;
+import cn.ittiger.im.constant.Constant;
+import cn.ittiger.im.util.DBHelper;
+import cn.ittiger.im.util.LoginHelper;
+
 /**
  * 多人聊天邀请监听
- * @author: laohu on 2017/1/24
- * @site: http://ittiger.cn
  */
 public class MultiChatInvitationListener implements InvitationListener {
 

@@ -4,8 +4,6 @@ import cn.ittiger.database.SQLiteDBConfig;
 
 /**
  * 本地数据库接口
- * @author: laohu on 2017/1/18
- * @site: http://ittiger.cn
  */
 public interface IDbApplication {
 	/**

@@ -1,11 +1,5 @@
 package cn.ittiger.im.adapter;
 
-import cn.ittiger.im.R;
-import cn.ittiger.im.adapter.viewholder.ContactIndexViewHolder;
-import cn.ittiger.im.adapter.viewholder.CreateMultiChatViewHolder;
-import cn.ittiger.im.bean.CheckableContactEntity;
-import cn.ittiger.indexlist.adapter.IndexStickyViewAdapter;
-
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -14,10 +8,14 @@ import android.view.ViewGroup;
 
 import java.util.List;
 
+import cn.ittiger.im.R;
+import cn.ittiger.im.adapter.viewholder.ContactIndexViewHolder;
+import cn.ittiger.im.adapter.viewholder.CreateMultiChatViewHolder;
+import cn.ittiger.im.bean.CheckableContactEntity;
+import cn.ittiger.indexlist.adapter.IndexStickyViewAdapter;
+
 /**
  * 可选联系人列表适配器
- * @author: laohu on 2017/1/24
- * @site: http://ittiger.cn
  */
 public class CheckableContactAdapter extends IndexStickyViewAdapter<CheckableContactEntity> {
     private Context mContext;

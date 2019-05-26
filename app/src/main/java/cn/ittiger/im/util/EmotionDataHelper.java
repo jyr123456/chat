@@ -1,18 +1,16 @@
 package cn.ittiger.im.util;
 
-import cn.ittiger.im.R;
-import cn.ittiger.im.constant.EmotionType;
-
 import android.support.v4.util.ArrayMap;
 
 import java.util.ArrayList;
 import java.util.List;
 
+import cn.ittiger.im.R;
+import cn.ittiger.im.constant.EmotionType;
+
 /**
  * 表情数据帮助类
  *
- * @author: laohu on 2017/2/6
- * @site: http://ittiger.cn
  */
 public class EmotionDataHelper {
     /**

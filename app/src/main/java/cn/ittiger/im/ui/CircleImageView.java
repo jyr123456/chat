@@ -1,7 +1,5 @@
 package cn.ittiger.im.ui;
 
-import cn.ittiger.im.R;
-
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.Bitmap;
@@ -23,8 +21,9 @@ import android.support.annotation.DrawableRes;
 import android.util.AttributeSet;
 import android.widget.ImageView;
 
+import cn.ittiger.im.R;
+
 /**
- * Created by ylhu on 16-12-15.
  */
 public class CircleImageView extends ImageView {
 

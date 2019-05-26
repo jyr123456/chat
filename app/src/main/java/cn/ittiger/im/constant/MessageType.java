@@ -2,8 +2,6 @@ package cn.ittiger.im.constant;
 
 /**
  * 消息类型
- * @author: laohu on 2017/1/12
- * @site: http://ittiger.cn
  */
 public enum MessageType {
     /**

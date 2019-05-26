@@ -1,27 +1,11 @@
 package cn.ittiger.im.fragment;
 
-import butterknife.BindView;
-import butterknife.ButterKnife;
-import cn.ittiger.base.BaseFragment;
-import cn.ittiger.im.R;
-import cn.ittiger.im.activity.MainActivity;
-import cn.ittiger.im.activity.MultiChatActivity;
-import cn.ittiger.im.adapter.ChatRecordAdapter;
-import cn.ittiger.im.decoration.CommonItemDecoration;
-import cn.ittiger.im.bean.ChatMessage;
-import cn.ittiger.im.bean.ChatRecord;
-import cn.ittiger.im.smack.SmackManager;
-import cn.ittiger.im.ui.recyclerview.CommonRecyclerView;
-import cn.ittiger.im.ui.recyclerview.HeaderAndFooterAdapter;
-import cn.ittiger.im.util.DBHelper;
-import cn.ittiger.im.util.DBQueryHelper;
-import cn.ittiger.im.util.IMUtil;
-import cn.ittiger.util.UIUtil;
-import rx.Observable;
-import rx.Subscriber;
-import rx.android.schedulers.AndroidSchedulers;
-import rx.functions.Action1;
-import rx.schedulers.Schedulers;
+import android.os.Bundle;
+import android.support.annotation.Nullable;
+import android.support.v7.app.AlertDialog;
+import android.support.v7.widget.LinearLayoutManager;
+import android.view.LayoutInflater;
+import android.view.View;
 
 import com.orhanobut.logger.Logger;
 
@@ -30,20 +14,29 @@ import org.greenrobot.eventbus.Subscribe;
 import org.greenrobot.eventbus.ThreadMode;
 import org.jivesoftware.smackx.muc.MultiUserChat;
 
-import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.support.v7.app.AlertDialog;
-import android.support.v7.widget.LinearLayoutManager;
-import android.view.LayoutInflater;
-import android.view.View;
-
 import java.util.HashMap;
 import java.util.List;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
+import cn.ittiger.base.BaseFragment;
+import cn.ittiger.im.R;
+import cn.ittiger.im.adapter.ChatRecordAdapter;
+import cn.ittiger.im.bean.ChatMessage;
+import cn.ittiger.im.bean.ChatRecord;
+import cn.ittiger.im.decoration.CommonItemDecoration;
+import cn.ittiger.im.smack.SmackManager;
+import cn.ittiger.im.ui.recyclerview.CommonRecyclerView;
+import cn.ittiger.im.ui.recyclerview.HeaderAndFooterAdapter;
+import cn.ittiger.im.util.DBHelper;
+import cn.ittiger.im.util.DBQueryHelper;
+import cn.ittiger.im.util.IMUtil;
+import rx.Observable;
+import rx.android.schedulers.AndroidSchedulers;
+import rx.schedulers.Schedulers;
+
 /**
  * 聊天消息列表
- * @author: laohu on 2016/12/24
- * @site: http://ittiger.cn
  */
 public class MessageFragment extends BaseFragment implements CommonRecyclerView.OnItemClickListener, CommonRecyclerView.OnItemLongClickListener {
     @BindView(R.id.recycler_message_record)

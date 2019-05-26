@@ -1,16 +1,13 @@
 package cn.ittiger.im.bean;
 
+import org.jivesoftware.smackx.disco.packet.DiscoverItems;
+
 import cn.ittiger.database.annotation.Column;
 import cn.ittiger.database.annotation.PrimaryKey;
 import cn.ittiger.database.annotation.Table;
 
-import org.jivesoftware.smackx.disco.packet.DiscoverItems;
-
 /**
  * 当前用户加入过的群聊
- *
- * @author: laohu on 2017/2/3
- * @site: http://ittiger.cn
  */
 @Table(name = "MultiChatRoom")
 public class MultiChatRoom {

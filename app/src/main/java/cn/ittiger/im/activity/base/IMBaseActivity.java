@@ -7,8 +7,6 @@ import cn.ittiger.base.BaseActivity;
 import cn.ittiger.im.R;
 
 /**
- * @author: laohu on 2017/1/1
- * @site: http://ittiger.cn
  */
 public class IMBaseActivity extends BaseActivity {
 

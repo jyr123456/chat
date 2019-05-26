@@ -1,8 +1,6 @@
 package cn.ittiger.im.constant;
 
 /**
- * @author: laohu on 2017/2/3
- * @site: http://ittiger.cn
  */
 public class Constant {
 

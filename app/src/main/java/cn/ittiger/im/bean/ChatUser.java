@@ -1,21 +1,18 @@
 package cn.ittiger.im.bean;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
+import java.util.UUID;
+
 import cn.ittiger.database.annotation.Column;
 import cn.ittiger.database.annotation.PrimaryKey;
 import cn.ittiger.database.annotation.Table;
 import cn.ittiger.im.smack.SmackManager;
 import cn.ittiger.im.util.LoginHelper;
 
-import android.os.Parcel;
-import android.os.Parcelable;
-
-import java.util.UUID;
-
 /**
  * 聊天用户实体对象
- *
- * @author: laohu on 2017/1/19
- * @site: http://ittiger.cn
  */
 @Table(name = "ChatDialog")
 public class ChatUser implements Parcelable {

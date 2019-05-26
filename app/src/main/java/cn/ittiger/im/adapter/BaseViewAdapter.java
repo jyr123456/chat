@@ -1,18 +1,16 @@
 package cn.ittiger.im.adapter;
 
-import java.util.Collection;
-import java.util.List;
-
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 
+import java.util.Collection;
+import java.util.List;
+
 /**
  * ListView的基础适配器
- * @author: huylee
- * @time:	2014-11-2下午8:44:03
  * @param <T>
  */
 public abstract class BaseViewAdapter<T> extends BaseAdapter {
