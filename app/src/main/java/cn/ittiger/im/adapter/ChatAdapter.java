@@ -114,16 +114,16 @@ public class ChatAdapter extends HeaderAndFooterAdapter<ChatMessage> {
     }
 
     private void showLoading(ChatViewHolder viewHolder, ChatMessage message) {
-        if (message.getFileLoadState() == FileLoadState.STATE_LOAD_START.value()) {//加载开始
-            viewHolder.chatContentLoading.setBackgroundResource(R.drawable.chat_file_content_loading_anim);
-            final AnimationDrawable animationDrawable = (AnimationDrawable) viewHolder.chatContentLoading.getBackground();
-            viewHolder.chatContentLoading.post(() -> animationDrawable.start());
-            viewHolder.chatContentLoading.setVisibility(View.VISIBLE);
-        } else if(message.getFileLoadState() == FileLoadState.STATE_LOAD_SUCCESS.value()) {//加载完成
-            viewHolder.chatContentLoading.setVisibility(View.GONE);
-        } else if(message.getFileLoadState() == FileLoadState.STATE_LOAD_ERROR.value()) {
-            viewHolder.chatContentLoading.setBackgroundResource(R.drawable.file_load_fail);
-        }
+//        if (message.getFileLoadState() == FileLoadState.STATE_LOAD_START.value()) {//加载开始
+//            viewHolder.chatContentLoading.setBackgroundResource(R.drawable.chat_file_content_loading_anim);
+//            final AnimationDrawable animationDrawable = (AnimationDrawable) viewHolder.chatContentLoading.getBackground();
+//            viewHolder.chatContentLoading.post(() -> animationDrawable.start());
+//            viewHolder.chatContentLoading.setVisibility(View.VISIBLE);
+//        } else if(message.getFileLoadState() == FileLoadState.STATE_LOAD_SUCCESS.value()) {//加载完成
+//            viewHolder.chatContentLoading.setVisibility(View.GONE);
+//        } else if(message.getFileLoadState() == FileLoadState.STATE_LOAD_ERROR.value()) {
+//            viewHolder.chatContentLoading.setBackgroundResource(R.drawable.file_load_fail);
+//        }
     }
 
     /**

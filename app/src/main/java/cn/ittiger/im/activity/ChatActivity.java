@@ -208,13 +208,17 @@ public class ChatActivity extends BaseChatActivity {
                 if (request.getMimeType().contains("image")) {
                     //保存图片到本地图库
                     File file2 = new File("/storage/emulated/0/Pictures/", request.getFileName());
-                    transfer2.recieveFile(file2);
+                    transfer.recieveFile(file2);
+                } else if (request.getMimeType().contains("video")) {
+
                 }else{
                     //保存文件到本地文件夹根目录
                     File file2 = new File("/storage/emulated/0/", request.getFileName());
-                    transfer2.recieveFile(file2);
+                    transfer.recieveFile(file2);
                 }
 
+                transfer.recieveFile(file);
+                checkTransferStatus(transfer, file, messageType, false);
 
 
             } catch (Exception e) {
@@ -284,11 +288,11 @@ public class ChatActivity extends BaseChatActivity {
     @Override
     public void sendVoice(File audioFile) {
         //判断该好友是否在线 ，true在线， flase不在线
-        Boolean b = SmackManager.getInstance().isonline(mChatUser.getFriendNickname()+"@www.jyr.com");
+        /*Boolean b = SmackManager.getInstance().isonline(mChatUser.getFriendNickname()+"@www.jyr.com");
         if(!b){
             UIUtil.showToast(ChatActivity.this, "该好友已离线，无法发送！");
             return;
-        }
+        }*/
         sendFile(audioFile, MessageType.MESSAGE_TYPE_VOICE.value());
     }
 
